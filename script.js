@@ -1,4 +1,5 @@
 import { questions100 } from './data100.js';
+import { questions20 } from './data20.js';
 
 const startBtn = document.getElementById("start");
 const header = document.getElementById("header");
@@ -40,6 +41,14 @@ function startQuiz(){
     lvlcontainer.style.display = "inline";
     startBtn.style.display = "none";
     header.style.display = "none";
+    lvl1btn.addEventListener("click", ()=>{
+        questions = questions20;
+        tasksperblock = questions[0].tasks.length - 1;
+        blocks = questions.length;
+        total= 20;
+        startwithquestions();
+        lvlcontainer.style.display = "none";
+    });
     lvl5btn.addEventListener("click", ()=>{
         questions = questions100;
         tasksperblock = questions[0].tasks.length - 1;
@@ -48,6 +57,7 @@ function startQuiz(){
         startwithquestions();
         lvlcontainer.style.display = "none";
     });
+    
 }
 
 function startwithquestions(){
